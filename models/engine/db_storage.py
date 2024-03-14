@@ -88,13 +88,11 @@ class DBStorage:
         """
         count = 0
         if cls is not None:
-            objs = self.__session.query(classes[clss]).all()
-            for obj in objs:
-                count += 1
-            return count
-        for clss in classes:
-            objs = self.__session.query(classes[clss]).all()
-            for obj in objs:
-                count += 1
+            objs = self.__session.query(classes[cls]).all()
+            count = len(objs)
+        else:
+            for cls in classes:
+                objs = self.__session.query(classes[cls]).all()
+                count += len(objs)
         return count
                     
