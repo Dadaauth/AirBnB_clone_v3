@@ -116,6 +116,8 @@ class TestFileStorage(unittest.TestCase):
 
     def test_count(self):
         """Tests the count method"""
+        return True
 
     def test_get(self):
         """Tests the get method"""
+        return True
